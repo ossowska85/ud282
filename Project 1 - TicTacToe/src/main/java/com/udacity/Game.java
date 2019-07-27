@@ -148,59 +148,59 @@ public class Game {
      * @param grid 2D array of characters representing the game board
      * @return String indicating the outcome of the game: "X wins" or "O wins" or "Tie" or "None"
      */
-    public String checkGameWinner(char [][]grid){
+    public String checkGameWinner(char[][] grid) {
         String result = "None";
         //Student code goes here ...
 
-        for (int i =0; i<3; i++){
-            if(grid[i][0]==grid[i][1] && grid[i][1]==grid[i][2]){
-                if (grid[i][0]=='x'){
+        for (int i = 0; i < 3; i++) {
+            if (grid[i][0] == grid[i][1] && grid[i][1] == grid[i][2]) {
+                if (grid[i][0] == 'x') {
                     result = "X wins";
                     break;
-                } else if (grid[i][0]=='o'){
+                } else if (grid[i][0] == 'o') {
                     result = "O wins";
                     break;
                 }
             }
         }
 
-        for (int i =0; i<3; i++){
-            if(grid[0][i]==grid[1][i] && grid[1][i]==grid[2][i]){
-                if (grid[0][i]=='x'){
+        for (int i = 0; i < 3; i++) {
+            if (grid[0][i] == grid[1][i] && grid[1][i] == grid[2][i]) {
+                if (grid[0][i] == 'x') {
                     result = "X wins";
                     break;
-                } else if (grid[0][i]=='o'){
+                } else if (grid[0][i] == 'o') {
                     result = "O wins";
                     break;
                 }
             }
         }
 
-        if(grid[0][0]==grid[1][1] && grid[1][1]==grid[2][2]){
-            if (grid[0][0]=='x'){
+        if (grid[0][0] == grid[1][1] && grid[1][1] == grid[2][2]) {
+            if (grid[0][0] == 'x') {
                 result = "X wins";
-            } else if (grid[0][0]=='o'){
+            } else if (grid[0][0] == 'o') {
                 result = "O wins";
             }
         }
 
-        if (grid[2][0]==grid[1][1] && grid[1][1]==grid[0][2]){
-            if (grid[2][0]=='x'){
+        if (grid[2][0] == grid[1][1] && grid[1][1] == grid[0][2]) {
+            if (grid[2][0] == 'x') {
                 result = "X wins";
-            } else if (grid[2][0]=='o'){
+            } else if (grid[2][0] == 'o') {
                 result = "O wins";
             }
         }
 
         boolean isFull = true;
-        for (int i =0;i<grid.length;i++){
-            for (int j=0; j<grid[i].length; j++){
-                if(grid[i][j]=='-'){
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                if (grid[i][j] == '-') {
                     isFull = false;
                 }
             }
         }
-        if (isFull == true && result.equals("None")){
+        if (isFull == true && result.equals("None")) {
             result = "Tie";
         }
 
